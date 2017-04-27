@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace HumaneSociety
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Start();
+            Console.ReadLine();
         }
     }
 }
