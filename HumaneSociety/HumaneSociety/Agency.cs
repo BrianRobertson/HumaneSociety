@@ -6,17 +6,22 @@ using System.Threading.Tasks;
 
 namespace HumaneSociety
 {
-    public class MainMenu
+    public class Agency
     {
+        Manager manager;
+        public Agency()
+        {
+            this.manager = new Manager();
+        }
         public void Start()
         {
             UI.DisplayWelcome();
-            SetMode();
+            SetUserMode();
             //UI.DisplayMessage("Hello, write something");
             //string input = UI.GetUserInput();
             //UI.DisplayMessage("This is what you wrote. " + input);
         }
-        public void SetMode()
+        public void SetUserMode()
         {
             UI.DisplayMessage("Main menu. What do you want to do?"
                 + "\n1. Enter as Guest/Potential Adopter"
@@ -31,17 +36,18 @@ namespace HumaneSociety
                     break;
                 case "2":
                     Console.WriteLine("Manager/Employee\n");
+                    manager.Test();
                     break;
                 case "3":
                     Console.WriteLine("Start new session.\n");
                     Start();
                     break;
                 case "4":
-                    Console.WriteLine("Exit program.\n");
+                    Console.WriteLine("Exit program by pressing Enter button.\n");
                     break;
                 default:
                     Console.WriteLine("Not a valid choice.\n");
-                    SetMode();
+                    SetUserMode();
                     break;
             }
         }

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace HumaneSociety
 {
-    public class Program
+    public class Manager
     {
-        static void Main(string[] args)
+        //Manager or Employee.
+        public void Test()
         {
-            Agency mainMenu = new Agency();
-            mainMenu.Start();
-            Console.ReadLine();
+            Animal animal = new Animal();
+            animal.AddToDatabase();
         }
     }
 }

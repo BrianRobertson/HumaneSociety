@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HumaneSociety" Class="HumaneSocietyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-297GRU9A;Initial Catalog=HumaneSociety;Integrated Security=True;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="HumaneSociety.Properties.Settings" SettingsPropertyName="HumaneSocietyConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Animal" Member="Animals">
+    <Type Name="Animal">
+      <Column Name="animal_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tag_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="species" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="breed" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="neutered_spayed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="age_at_enter_date" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="description_notes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="kid_friendly" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="maintenance_level" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="enter_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="source_aquired" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="room_assignment" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="daily_food_ration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="shots" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="shots_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="adopted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="adopted_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="adopted_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Animal_Adopter" Member="Adopters" ThisKey="animal_id" OtherKey="animal_id" Type="Adopter" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Adopter" Member="Adopters">
+    <Type Name="Adopter">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="member_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phone_number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="street_address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="adopter_state" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="zip" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="urban_rural" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="number_of_kids" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="other_pets" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pets_adopted" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="balance_paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="animal_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Animal_Adopter" Member="Animal" ThisKey="animal_id" OtherKey="animal_id" Type="Animal" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
