@@ -10,8 +10,8 @@ namespace HumaneSociety
     {
         static void Main(string[] args)
         {
-            Agency mainMenu = new Agency();
-            mainMenu.Start();
+            Agency agency = new Agency();
+            agency.Start();
             Console.ReadLine();
         }
     }

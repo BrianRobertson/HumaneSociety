@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HumaneSociety
 {
-    class Guest
+    class Adopter
     {
-        //Potential adopter.
+        //Guest and Potential adopter.
     }
 }

@@ -36,7 +36,7 @@ namespace HumaneSociety
                     break;
                 case "2":
                     Console.WriteLine("Manager/Employee\n");
-                    manager.Test();
+                    manager.ManageMenu();
                     break;
                 case "3":
                     Console.WriteLine("Start new session.\n");

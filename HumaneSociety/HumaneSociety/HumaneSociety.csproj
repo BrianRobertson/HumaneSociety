@@ -49,7 +49,7 @@
     <Compile Include="Agency.cs" />
     <Compile Include="DatabaseSaver.cs" />
     <Compile Include="DatabaseViewer.cs" />
-    <Compile Include="Guest.cs" />
+    <Compile Include="Adopter.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -16,9 +16,53 @@ namespace HumaneSociety
         {
             Console.WriteLine(message);
         }
-        public static string GetUserInput()
+        public static string GetString(string question)
         {
-            return Console.ReadLine();
+            string input;
+            Console.Write(question);
+            input = Console.ReadLine();
+            if (string.IsNullOrEmpty(input))
+            {
+                Console.Write($"Error: No input entered. {question}");
+                GetString(question);
+            }
+            return input;
+        }
+        public static int GetInt(string question)
+        {
+            int input;
+            Console.Write(question);
+            while (!int.TryParse(Console.ReadLine(), out input))
+            {
+                Console.Write($"Error: Enter whole number. {question}");
+            }
+            return input;
+        }
+        public static double GetDouble(string question)
+        {
+            double input;
+            Console.Write(question);
+            while (!double.TryParse(Console.ReadLine(), out input))
+            {
+                Console.Write($"Error: enter whole number. {question}");
+            }
+            return input;
+        }
+        public static bool GetYesNoBool(string question)
+        {
+            string input;
+            Console.Write(question + " enter (y or n): ");
+            input = Console.ReadLine();
+            switch (input.ToLower())
+            {
+                case "y":
+                    return true;
+                case "n":
+                    return false;
+                default:
+                    Console.Write("Error, invalid input. ");
+                    return GetYesNoBool(question);
+            }
         }
     }
 }

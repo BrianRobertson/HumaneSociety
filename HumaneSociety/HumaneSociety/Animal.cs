@@ -21,16 +21,20 @@ namespace HumaneSociety
 
         public Animal()
         {
-            tagId = "d101";
-            species = "dog";
-            name = "Fido";
-            breed = "mixed";
-            gender = "M";
-            neuteredSpayed = true;
-            dailyFoodRation = 1;
-            adopted = false;
-            shots = true;
-            price = 75;
+            //constructor. time stamp perhaps.
+        }
+        public void IntakeAnimal()
+        {
+            tagId = UI.GetString("Number on animal tag issued: ");
+            species = UI.GetString("Type of animal: ");
+            name = UI.GetString("Name: ");
+            breed = UI.GetString("Breed: ");
+            gender = UI.GetString("Gender, enter m for male or f for female: ");
+            neuteredSpayed = UI.GetYesNoBool("Neutered or spayed? ");
+            dailyFoodRation = UI.GetInt("Daily food ration, enter number of scoops: ");
+            adopted = UI.GetYesNoBool("Adopted? ");
+            shots = UI.GetYesNoBool("Shots? ");
+            price = UI.GetDouble("Amount of donation request, enter dollar value: ");
         }
         public void AddToDatabase()
         {
