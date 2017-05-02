@@ -28,7 +28,7 @@ namespace HumaneSociety
             {
                 Console.WriteLine(e);
             }
-            Console.ReadLine();
+            //Console.ReadLine();
         }
         public void UpdateRoom(string tagId, int roomAssignment)
         {
@@ -44,7 +44,7 @@ namespace HumaneSociety
             {
                 Console.WriteLine(e);
             }
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }
