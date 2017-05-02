@@ -17,9 +17,6 @@ namespace HumaneSociety
         {
             UI.DisplayWelcome();
             SetUserMode();
-            //UI.DisplayMessage("Hello, write something");
-            //string input = UI.GetUserInput();
-            //UI.DisplayMessage("This is what you wrote. " + input);
         }
         public void SetUserMode()
         {

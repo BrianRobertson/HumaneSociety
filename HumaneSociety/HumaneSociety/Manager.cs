@@ -8,18 +8,16 @@ namespace HumaneSociety
 {
     public class Manager
     {
-        //Manager or Employee.
-        public void Test()
+        public Manager()
         {
-            Animal animal = new Animal();
-            animal.AddToDatabase();
+            //constructor.
         }
         public void ManageMenu()
         {
             UI.DisplayMessage("Manager Menu. What do you want to do?"
                 + "\n1. Add a new animal."
                 + "\n2. View all animals."
-                + "\n3. Start a new session."
+                + "\n3. Update an animal's room assignment."
                 + "\n4. Exit the program.");
             string input = Console.ReadLine().ToLower().Trim();
             switch (input)
@@ -38,8 +36,10 @@ namespace HumaneSociety
                     ManageMenu();
                     break;
                 case "3":
-                    Console.WriteLine("Start new session.\n");
-                    //agency.Start();
+                    Console.WriteLine("Update an animal's room assignment.\n");
+                    Animal updateAnimal = new Animal();
+                    updateAnimal.ChangeRoomAssignment();
+                    ManageMenu();
                     break;
                 case "4":
                     Console.WriteLine("Exit program by pressing Enter button.\n");

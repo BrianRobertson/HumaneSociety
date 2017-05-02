@@ -14,6 +14,7 @@ namespace HumaneSociety
         public string breed;
         public string gender;
         public bool neuteredSpayed;
+        public int roomAssignment;
         public int dailyFoodRation;
         public bool adopted;
         public bool shots;
@@ -21,7 +22,7 @@ namespace HumaneSociety
 
         public Animal()
         {
-            //constructor. time stamp perhaps.
+            //constructor.
         }
         public void IntakeAnimal()
         {
@@ -31,6 +32,7 @@ namespace HumaneSociety
             breed = UI.GetString("Breed: ");
             gender = UI.GetString("Gender, enter m for male or f for female: ");
             neuteredSpayed = UI.GetYesNoBool("Neutered or spayed? ");
+            roomAssignment = UI.GetInt("Room assignment: ");
             dailyFoodRation = UI.GetInt("Daily food ration, enter number of scoops: ");
             adopted = UI.GetYesNoBool("Adopted? ");
             shots = UI.GetYesNoBool("Shots? ");
@@ -39,7 +41,14 @@ namespace HumaneSociety
         public void AddToDatabase()
         {
             DatabaseSaver databaseSaver = new DatabaseSaver();
-            databaseSaver.Save(tagId, species, name, breed, gender, neuteredSpayed, dailyFoodRation, adopted, shots, price);
+            databaseSaver.Save(tagId, species, name, breed, gender, neuteredSpayed, roomAssignment, dailyFoodRation, adopted, shots, price);
+        }
+        public void ChangeRoomAssignment()
+        {
+            tagId = UI.GetString("Enter the tag of the animal you wish to reassign a room: ");
+            roomAssignment = UI.GetInt("New room assignment: ");
+            DatabaseSaver databaseSaver = new DatabaseSaver();
+            databaseSaver.UpdateRoom(tagId, roomAssignment);
         }
     }
 }
