@@ -8,6 +8,6 @@ namespace HumaneSociety
 {
     class AnimalInventory
     {
-        //Not needed?
+        //Not needed.
     }
 }

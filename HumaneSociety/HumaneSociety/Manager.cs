@@ -18,7 +18,10 @@ namespace HumaneSociety
                 + "\n1. Add a new animal."
                 + "\n2. View all animals."
                 + "\n3. Update an animal's room assignment."
-                + "\n4. Exit the program.");
+                + "\n4. Adjust an animal's daily food ration."
+                + "\n5. Give an animal their shots."
+                + "\n6. Process an animal's adoption."
+                + "\n7. Exit the program.");
             string input = Console.ReadLine().ToLower().Trim();
             switch (input)
             {
@@ -37,11 +40,29 @@ namespace HumaneSociety
                     break;
                 case "3":
                     Console.WriteLine("Update an animal's room assignment.\n");
-                    Animal updateAnimal = new Animal();
-                    updateAnimal.ChangeRoomAssignment();
+                    Animal roomAnimal = new Animal();
+                    roomAnimal.ChangeRoomAssignment();
                     ManageMenu();
                     break;
                 case "4":
+                    Console.WriteLine("Update an animal's food rations.\n");
+                    Animal foodAnimal = new Animal();
+                    foodAnimal.AdjustFoodRation();
+                    ManageMenu();
+                    break;
+                case "5":
+                    Console.WriteLine("Give an animal shots.\n");
+                    Animal shotsAnimal = new Animal();
+                    shotsAnimal.GiveShots();
+                    ManageMenu();
+                    break;
+                case "6":
+                    Console.WriteLine("Process an animal's adoption.\n");
+                    Animal adoptAnimal = new Animal();
+                    adoptAnimal.ProcessAdoption();
+                    ManageMenu();
+                    break;
+                case "7":
                     Console.WriteLine("Exit program by pressing Enter button.\n");
                     break;
                 default:

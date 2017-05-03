@@ -50,5 +50,26 @@ namespace HumaneSociety
             DatabaseSaver databaseSaver = new DatabaseSaver();
             databaseSaver.UpdateRoom(tagId, roomAssignment);
         }
+        public void AdjustFoodRation()
+        {
+            tagId = UI.GetString("Enter the tag of the animal you wish to adjust food ration: ");
+            dailyFoodRation = UI.GetInt("New number of rations: ");
+            DatabaseSaver databaseSaver = new DatabaseSaver();
+            databaseSaver.UpdateFood(tagId, dailyFoodRation);
+        }
+        public void GiveShots()
+        {
+            tagId = UI.GetString("Enter the tag of the animal you are giving shots: ");
+            shots = UI.GetYesNoBool("Shots received? ");
+            DatabaseSaver databaseSaver = new DatabaseSaver();
+            databaseSaver.UpdateShots(tagId, shots);
+        }
+        public void ProcessAdoption()
+        {
+            tagId = UI.GetString("Enter the tag of the animal you wish to process the adoption: ");
+            adopted = UI.GetYesNoBool("Adoption process complete? ");
+            DatabaseSaver databaseSaver = new DatabaseSaver();
+            databaseSaver.AdoptAnimal(tagId, adopted);
+        }
     }
 }
